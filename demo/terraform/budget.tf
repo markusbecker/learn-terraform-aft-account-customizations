@@ -7,10 +7,10 @@
 #   time_period_start = "2023-06-06_00:00"
 #   time_unit         = "MONTHLY"
 # }
-data "aws_caller_identity" "current" {}
+data "aws_caller_identity" "current2" {}
 
 resource "aws_s3_bucket" "first" {
-  bucket = "my-tf-test-${data.aws_caller_identity.current.account_id}"
+  bucket = "my-tf-test-${data.aws_caller_identity.current2.account_id}"
 
   tags = {
     Name        = "My bucket"
